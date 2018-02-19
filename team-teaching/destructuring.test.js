@@ -1,15 +1,31 @@
 it('basic object destructuring', () => {
   const obj = { a: 'hey', b: 'wow' };
-  const a = obj.a;
 
-  expect(a).toEqual('hey');
+  // const a = obj.a;
+  // const b = obj.b;
+
+  const { a, b } = obj;
+
+  expect(b).toEqual('wow');
 });
 
 it('nested destructures', () => {
-  const obj = { a: { aa: 'hey' }, b: 'wow' };
-  const aa = obj.a.aa;
+  const obj = {
+    a: { cats: 'hey', dogs: 'meh' },
+    b: 'wow',
+  };
 
-  expect(aa).toEqual('hey');
+  // const a = obj.a;
+  // const { a } = obj;
+
+  // const cats = a.cats;
+  // const { cats } = a;
+
+  // const cats = obj.a.cats
+  // const dogs = obj.a.dogs
+  const { a: { cats } } = obj;
+
+  expect(cats).toEqual('hey');
 });
 
 it('object destructuring with default', () => {
@@ -20,10 +36,15 @@ it('object destructuring with default', () => {
 });
 
 it('basic array destructuring', () => {
-  const arr = [1, 2, 3];
+  const arr = [0, 1, 2];
   const item = arr[0];
 
-  expect(item).toEqual(1);
+  // const first = arr[0];
+  // const second = arr[1];
+  // const third  = arr[2];
+  const [first, second, third] = arr;
+
+  expect(first).toEqual(0);
 });
 
 it('array destructuring with default', () => {

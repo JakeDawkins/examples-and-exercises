@@ -1,3 +1,3 @@
-import hello, { a, b, c } from './exports';
+import cats from './exports';
 
 it('', () => {});
