@@ -21,7 +21,26 @@ const dfs = (root, value) => {
 };
 
 const bfs = (root, value) => {
+  const queue = [];
   if (!root) return false;
+
+  queue.push(root);
+
+  while (queue.length) {
+    const n = queue.shift();
+    if (n.value === value) {
+      return true;
+    }
+
+    if (n.left) {
+      queue.push(n.left);
+    }
+    if (n.right) {
+      queue.push(n.right);
+    }
+  }
+
+  return false;
 };
 
 it('prints', () => {
