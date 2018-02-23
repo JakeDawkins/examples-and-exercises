@@ -1,12 +1,12 @@
 // Objects
 
-it('basic object spread (object clone)', () => {});
+it('basic object spread', () => {});
 
 it('basic object spread (merging objects)', () => {});
 
 // Arrays
 
-it('basic array spread (array clone)', () => {});
+it('basic array spread', () => {});
 
 it('basic array spread (concat arrays)', () => {});
 
