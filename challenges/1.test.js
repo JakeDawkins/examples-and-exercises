@@ -43,6 +43,18 @@ const bfs = (root, value) => {
   return false;
 };
 
+const depth = root => {
+  if (!root) return 0;
+  if (!root.left && !root.right) return 0;
+  return 1 + Math.max(depth(root.left), depth(root.right));
+};
+
+const balanced = root =>
+  root === null ||
+  (balanced(root.left) &&
+    balanced(root.right) &&
+    Math.abs(depth(root.left) - depth(root.right)) <= 1);
+
 it('prints', () => {
   const printed = print({ left: null, right: null, value: 1 });
   expect(printed).toEqual('1');
@@ -67,4 +79,25 @@ it('bfs', () => {
 
   expect(bfs(added, 6)).toEqual(false);
   expect(bfs(added, 1)).toEqual(true);
+});
+
+it('depth', () => {
+  let added = add(add(add(null, 5), 2), 1);
+  expect(depth(added)).toEqual(2);
+
+  added = add(add(add(null, 5), 2), 6);
+  expect(depth(added)).toEqual(1);
+
+  added = add(add(added, 7), 8);
+  expect(depth(added)).toEqual(3);
+});
+
+it('balanced', () => {
+  let added = add(add(add(null, 5), 2), 6);
+  expect(balanced(added)).toBeTruthy();
+
+  added = add(add(added, 7), 8);
+  expect(balanced(added)).toBeFalsy();
+
+  expect(balanced(null)).toBeTruthy();
 });
