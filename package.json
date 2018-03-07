@@ -1,5 +1,5 @@
 {
-  "name": "talk-nerdy-to-me",
+  "name": "examples-and-exercises",
   "version": "1.0.0",
   "description": "Code examples, algorithm practice, and experiments",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JakeDawkins/talk-nerdy-to-me.git"
+    "url": "git+https://github.com/JakeDawkins/examples-and-exercises.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JakeDawkins/talk-nerdy-to-me/issues"
+    "url": "https://github.com/JakeDawkins/examples-and-exercises/issues"
   },
-  "homepage": "https://github.com/JakeDawkins/talk-nerdy-to-me#readme",
+  "homepage": "https://github.com/JakeDawkins/examples-and-exercises#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-jest": "^22.1.0",
